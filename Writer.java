@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Writer extends Menu {
@@ -8,7 +9,8 @@ public class Writer extends Menu {
         Scanner wow = new Scanner(System.in);
         String a = wow.nextLine();
         FileWriter writer = new FileWriter("res.txt", true);
-        writer.append(a + "\n");
+        LocalDateTime time = LocalDateTime.now();
+        writer.append(a + "\t" + time + "\n");
         System.out.println("entry create");
         writer.close();
     }
